@@ -1,9 +1,6 @@
 package pm_prova2_m;
 
-/**
- *
- * @author glbra
- */
+
 public class Moto extends Veiculo implements Inspecionavel {
 
     private int cilindrada;
@@ -11,7 +8,7 @@ public class Moto extends Veiculo implements Inspecionavel {
 
     public Moto(String placa, String modelo, int anoFabricacao,
                 double valorDiaria, double quilometragem, int cilindrada) {
-        super(placa, modelo, anoFabricacao, valorDiaria, quilometragem);
+        super(placa, modelo, anoFabricacao, valorDiaria, quilometragem, status); 
         this.cilindrada = cilindrada;
         this.inspecionada = false;
     }
@@ -38,4 +35,10 @@ public class Moto extends Veiculo implements Inspecionavel {
 
     public int getCilindrada()       { return cilindrada; }
     public boolean isInspecionada()  { return inspecionada; }
+
+    @Override
+    public boolean possuiSeguroEspecial() {
+ 
+        throw new UnsupportedOperationException("Unimplemented method 'possuiSeguroEspecial'");
+    }
 }

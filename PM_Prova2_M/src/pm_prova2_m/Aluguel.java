@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pm_prova2_m;
 import java.util.ArrayList;
 import java.util.List;
-/**
- *
- * @author glbra
- */
+
 public abstract class Aluguel {
 
     private static int contadorId = 1;

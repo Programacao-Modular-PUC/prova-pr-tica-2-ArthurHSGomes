@@ -34,7 +34,7 @@ public class PM_Prova2_M {
 
         Carro carro = new Carro(
             "ABC-1234", "Honda Civic", 2022,
-            150.00, 28500.0, 4
+            150.00, 28500.0, null, 4
         );
 
         Moto moto = new Moto(

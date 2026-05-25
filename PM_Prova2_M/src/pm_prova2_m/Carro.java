@@ -1,9 +1,5 @@
 package pm_prova2_m;
 
-/**
- *
- * @author glbra
- */
 public class Carro extends Veiculo implements Avaliavel {
 
     private int quantidadePortas;
@@ -11,12 +7,13 @@ public class Carro extends Veiculo implements Avaliavel {
     private boolean avaliado;
 
     public Carro(String placa, String modelo, int anoFabricacao,
-                 double valorDiaria, double quilometragem, int quantidadePortas) {
-        super(placa, modelo, anoFabricacao, valorDiaria, quilometragem);
-        this.quantidadePortas = quantidadePortas;
-        this.avaliacao = 0;
-        this.avaliado = false;
-    }
+             double valorDiaria, double quilometragem,
+             StatusVeiculo status, int quantidadePortas) {
+    super(placa, modelo, anoFabricacao, valorDiaria, quilometragem, status); 
+    this.quantidadePortas = quantidadePortas;
+    this.avaliacao = 0;
+    this.avaliado = false;
+}
 
     @Override
     public void avaliar(int nota) {
@@ -41,4 +38,10 @@ public class Carro extends Veiculo implements Avaliavel {
     public int getQuantidadePortas() { return quantidadePortas; }
     public int getAvaliacao()        { return avaliacao; }
     public boolean isAvaliado()      { return avaliado; }
+
+    @Override
+    public boolean possuiSeguroEspecial() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'possuiSeguroEspecial'");
+    }
 }

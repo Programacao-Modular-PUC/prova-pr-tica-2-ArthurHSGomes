@@ -1,9 +1,5 @@
 package pm_prova2_m;
 
-/**
- *
- * @author glbra
- */
 public class Van extends Veiculo implements Avaliavel, Inspecionavel {
 
     private int maxPassageiros;
@@ -12,8 +8,8 @@ public class Van extends Veiculo implements Avaliavel, Inspecionavel {
     private boolean inspecionada;
 
     public Van(String placa, String modelo, int anoFabricacao,
-               double valorDiaria, double quilometragem, int maxPassageiros) {
-        super(placa, modelo, anoFabricacao, valorDiaria, quilometragem);
+             double valorDiaria, double quilometragem, int maxPassageiros) {
+        super(placa, modelo, anoFabricacao, valorDiaria, quilometragem, status); 
         this.maxPassageiros = maxPassageiros;
         this.avaliacao = 0;
         this.avaliada = false;
