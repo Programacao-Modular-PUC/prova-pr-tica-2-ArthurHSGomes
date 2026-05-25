@@ -9,8 +9,6 @@ package pm_prova2_m;
  * @author glbra
  */
 public interface Avaliavel {
-    
-    public abstract void avaliar(int nota);
-
-    
+    void avaliar(int nota);
 }
+

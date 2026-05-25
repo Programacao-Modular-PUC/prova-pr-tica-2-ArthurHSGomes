@@ -3,60 +3,52 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package pm_prova2_m;
-
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author glbra
  */
 public abstract class Aluguel {
 
+    private static int contadorId = 1;
+
+    private int id;
     private String nomeCliente;
-    private int quantidadeDias;
-    private double valorTotal;
-    private StatusAluguel status;
+    private String dataInicio;
+    private String dataFim;
+    private List<Veiculo> veiculos;
 
-    public Aluguel(String nomeCliente, int quantidadeDias, double valorTotal, StatusAluguel status) {
-
+    public Aluguel(String nomeCliente, String dataInicio, String dataFim) {
+        this.id = contadorId++;
         this.nomeCliente = nomeCliente;
-        this.quantidadeDias = quantidadeDias;
-        this.valorTotal = valorTotal;
-        this.status = status;
-    }
-
-    public String getNomeCliente() {
-        return nomeCliente;
-    }
-
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
-    }
-
-    public int getQuantidadeDias() {
-        return quantidadeDias;
-    }
-
-    public void setQuantidadeDias(int quantidadeDias) {
-        this.quantidadeDias = quantidadeDias;
-    }
-
-    public double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
-    public StatusAluguel getStatus() {
-        return status;
-    }
-
-    public void setStatus(StatusAluguel status) {
-        this.status = status;
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
+        this.veiculos = new ArrayList<>();
     }
 
     public abstract void exibirDetalhes();
+    public abstract String getTipoAluguel();
 
-    public abstract boolean possuiSeguroIncluso();
-    
+    public void adicionarVeiculo(Veiculo veiculo) {
+        veiculos.add(veiculo);
+        veiculo.setStatus(StatusVeiculo.ALUGADO);
+    }
+
+    // Getters
+    public int getId()               { return id; }
+    public String getNomeCliente()   { return nomeCliente; }
+    public String getDataInicio()    { return dataInicio; }
+    public String getDataFim()       { return dataFim; }
+    public List<Veiculo> getVeiculos() { return veiculos; }
+
+    protected void exibirVeiculosAssociados() {
+        if (veiculos.isEmpty()) {
+            System.out.println("  Nenhum veiculo associado.");
+        } else {
+            for (Veiculo v : veiculos) {
+                System.out.println("  -> " + v.getModelo() + " [" + v.getPlaca() + "]");
+            }
+        }
+    }
 }

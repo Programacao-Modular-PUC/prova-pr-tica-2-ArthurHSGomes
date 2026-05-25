@@ -9,8 +9,6 @@ package pm_prova2_m;
  * @author glbra
  */
 public interface Inspecionavel {
-    
-     public abstract void realizarInspecao();
-
-    
+    void realizarInspecao();
 }
+

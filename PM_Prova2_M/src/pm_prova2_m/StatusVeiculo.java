@@ -9,9 +9,19 @@ package pm_prova2_m;
  * @author glbra
  */
 public enum StatusVeiculo {
-    
-    DISPONIVEL,
-    ALUGADO,
-    MANUTENCAO
-    
+    DISPONIVEL("Disponível"),
+    ALUGADO("Alugado"),
+    MANUTENCAO("Em Manutenção");
+
+    private final String descricao;
+
+    StatusVeiculo(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+}
+
 }
